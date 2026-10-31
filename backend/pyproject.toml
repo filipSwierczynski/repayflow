@@ -1,17 +1,38 @@
 [project]
-name = "backend"
+name = "repayflow"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
-    { name = "Filip Swierczynski", email = "swirek.gw@hotmail.com" }
+    { name = "Filip Swierczynski", email = "" }
 ]
 requires-python = ">=3.12"
 dependencies = []
 
 [project.scripts]
-backend = "backend:main"
+backend = "repayflow:main"
 
 [build-system]
 requires = ["uv_build>=0.13.6,<0.14.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.17.3",
+]
+
+[tool.uv.build-backend]
+module-name = "repayflow"
+
+[tool.ruff]
+line-length = 160
+
+[tool.ruff.lint]
+select = ["E","F","I","B","UP","SIM"]
+
+[tool.mypy]
+strict = true
+
